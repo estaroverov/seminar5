@@ -69,18 +69,24 @@ Console.WriteLine("max - min = "+(max-min));
 
 int FindElement(int val, int[] arr)
 {
-    int index=0;
+    int index = 0;
+    bool isFound = false;
     foreach (var item in arr)
     {
          if(item == val)
+         {
+            isFound = true;
             break;
+         }
         index++;
     }   
 
-    return index;
+    return isFound==true?index:-1;
 }
 
-int[] arrNum3 = FillRandomArray(10,20,23);
+int[] arrNum3 = FillRandomArray(10,10,23);
 PrintIntArray(arrNum3);
-arrNum3[FindElement(20,arrNum3)] = 200;
+int index = FindElement(20,arrNum3);
+if(index!=-1)
+    arrNum3[index] = 200;
 PrintIntArray(arrNum3);
