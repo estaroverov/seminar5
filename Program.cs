@@ -5,12 +5,30 @@
         arr[i] = new Random().Next(minVal,maxVal);
     return arr;
 }
+
 void PrintIntArray(int [] arr)
 {
     Console.WriteLine();
     foreach(int i in arr)
         Console.Write(i + " ");
     
+}
+
+int FindMaxNum(int [] arr)
+{
+    int max = arr[0];
+    foreach(int i in arr)
+        if(i>max)
+            max = i;
+    return max;
+}
+int FindMinNum(int [] arr)
+{
+    int min = arr[0];
+    foreach(int i in arr)
+        if(i<min)
+            min = i;
+    return min;
 }
 //////////////////////Задача номер 1
 void isEvenArr(int [] arr)
@@ -38,3 +56,13 @@ int sumElemNotEvenPos(int [] arr)
     return sum;
 }
 Console.WriteLine("Сумма элементов на нечетной позиции:"+sumElemNotEvenPos(arrNum1));
+
+////////////////////////Третья задача
+
+int[] arrNum2 = FillRandomArray(10,5,50);
+PrintIntArray(arrNum2);
+int min = FindMinNum(arrNum2);
+int max = FindMaxNum(arrNum2);
+Console.WriteLine("max - min = "+(max-min));
+
+////////////////////////Дополнительная задача
