@@ -66,3 +66,21 @@ int max = FindMaxNum(arrNum2);
 Console.WriteLine("max - min = "+(max-min));
 
 ////////////////////////Дополнительная задача
+
+int FindElement(int val, int[] arr)
+{
+    int index=0;
+    foreach (var item in arr)
+    {
+         if(item == val)
+            break;
+        index++;
+    }   
+
+    return index;
+}
+
+int[] arrNum3 = FillRandomArray(10,20,23);
+PrintIntArray(arrNum3);
+arrNum3[FindElement(20,arrNum3)] = 200;
+PrintIntArray(arrNum3);
